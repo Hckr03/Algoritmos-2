@@ -9,14 +9,10 @@ Algoritmo ejercicio_matriz_7
 			SiNo
 				matriz[i,j]<-azar(100)+1;
 			FinSi
-		FinPara
-	FinPara
-	
-	Para i<-1 Hasta 4 Con Paso 1 Hacer
-		Para j<-1 Hasta 4 Con Paso 1 Hacer
 			Imprimir "|", matriz[i,j], "|" Sin Saltar;
 		FinPara
 		Imprimir "";
 	FinPara
+	
 	Imprimir "La suma de la diagonal prinicipal es: ", sumDiagonal;
 FinAlgoritmo
