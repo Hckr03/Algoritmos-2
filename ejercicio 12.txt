@@ -1,0 +1,71 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main (String[] args){
+        /*Crear un arreglo cual nos permita almacenar cien números enteros.*/
+        int arreglos[] = new int[100];
+        int numayor=0, numenor=0, contador=0, sumaPU=0;
+        float promedio=0, suma=0;
+        String esCien="";
+        //arreglo para asignar valores al azar en una cantidad máxima de 100
+        for(int i=1; i<arreglos.length; i++){
+            arreglos[i] = (int)(Math.random() * 100+1);
+            //Determina número mayor
+            if (arreglos[i]>numayor){
+                numayor = arreglos[i];
+            }
+            //Determina número menor         
+            if (arreglos[i]<numenor){
+                numenor = arreglos[i];
+            }
+            //Suma todos los números
+            //Mostrar en consola el promedio del arreglo.
+            suma = suma + arreglos[i];
+            //Mostrar en consola el mensaje "Existe cien" en dado caso el arreglo almacene por los menos un cien.
+            if(arreglos[i]==100){
+                esCien = "Existe cien";
+            }
+        }
+        //Mostrar en consola el arreglo de forma ascendente.
+        Arrays.sort(arreglos);
+        for(int arreglo: arreglos){
+            System.out.println(arreglo+" orden ascendente");
+        }
+        //Saca el promedio
+        //Mostrar en consola el promedio del arreglo.
+        promedio = suma/100;
+        //el foreach para leer los números que se cargaron en la lista
+        //en busca de los números primos de la lista
+        for(int arreglo : arreglos){
+            //Para saber si es número primo
+            for(int i=1; i<=arreglo; i++){
+                if(arreglo % i==0){
+                    contador++;
+                }
+            }
+            if (contador == 2){
+                //Una vez encontrado el número primo debe inicializar el contador en 0
+                contador=0;
+                System.out.println(arreglo+ " Es número primo");
+            }else{
+                //Sino es número primo igual debo inicializar el contador en 0, el número primo solo tiene 0 ceros en el resto
+                //porque se divide con 1 y por sí mismo.
+                contador=0;
+            }
+        }
+        //Mostrar en consola todos los números pares.
+        for(int arreglo : arreglos){
+            //Para saber si es número par
+            if(arreglo % 2==0){
+                System.out.println(arreglo+ " es número par");
+            }
+        }
+        //Mostrar en consola la suma del primer y último elemento del arreglo.
+        sumaPU = arreglos[0] + arreglos[99];
+        System.out.println("El número mayor es: " +numayor);
+        System.out.println("El número menor es: " +numenor);
+        System.out.println("El promedio es : " +promedio);
+        System.out.println("La suma entre el primer y último elemento : " +sumaPU);
+        System.out.println(esCien);
+    }
+}
